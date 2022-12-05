@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+{{ content }} {% assign contentwonl = content | strip_newlines %} {% unless
+contentwonl == "" %}
+{% endunless %}
+{% assign tags = site.challenges | map: 'tags' | uniq %}
+{% for tag in tags %}
+<h3>{{ tag }}</h3>
+<ul>
+  {% for challenges in site.challenges %}
+  {% if challenges.tags contains tag %}
+  <li>[ {{ challenges.category }} ] <a href="{{ challenges.url | relative_url }}">{{ challenges.title | escape }}</a>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endfor %}

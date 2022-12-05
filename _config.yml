@@ -1,0 +1,21 @@
+# Example Site settings
+
+google_analytics: UA-236279260-1
+
+header_pages:
+  - index.md
+  - about.md
+  - challenges.md
+
+footer: 'bon_vivant()'
+
+plugins:
+  - jekyll-seo-tag
+
+permalink: /:categories/:title/
+
+collections_dir: collections
+collections:
+  challenges:
+    output: true
+    permalink: /:collection/:path
