@@ -84,4 +84,4 @@ Hoje aprendemos a configurar o frida para pode brincar com alguns aplicativos, p
 Esse artigo foi escrito ouvindo várias músicas mas sem dúvida essa foi a principal **[Conversa Com Deus - MC Kadu](https://www.youtube.com/watch?v=fFPpIdI8iUg)**.
 
 # Referências
-https://frida.re/docs/home/
+- https://frida.re/docs/home/
