@@ -1,0 +1,36 @@
+.challenge-page {
+  display: none;
+}
+
+.challenge-page.active {
+  display: block;
+}
+
+.challenge-page p {
+  margin: 0;
+}
+
+.pagination-nav {
+  text-align: right;
+  padding-top: 15px;
+}
+
+.pagination-nav button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  padding: 5px 10px;
+  cursor: pointer;
+  font-family: inherit;
+  margin: 0;
+}
+
+.pagination-nav button:hover {
+  background-color: var(--base-color);
+  color: var(--background-color);
+}
+
+.pagination-nav button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

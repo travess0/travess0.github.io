@@ -2,18 +2,33 @@
 layout: default
 ---
 
-{{ content }} {% assign contentwonl = content | strip_newlines %} {% unless
-contentwonl == "" %}
-{% endunless %}
-{% assign tags = site.challenges | map: 'tags' | uniq %}
-{% for tag in tags %}
-<h3>{{ tag }}</h3>
-<ul>
-  {% for challenges in site.challenges %}
-  {% if challenges.tags contains tag %}
-  <li>[ {{ challenges.category }} ] <a href="{{ challenges.url | relative_url }}">{{ challenges.title | escape }}</a>
-  </li>
+{{ content }}
+
+<link rel="stylesheet" href="{{ " /assets/challenges.css" | relative_url }}">
+
+<div id="challenges-container">
+  {% assign all_challenges = site.challenges | reverse %}
+  {% for challenge in all_challenges %}
+  {% assign mod = forloop.index0 | modulo: 5 %}
+  {% if mod == 0 %}
+  <div class="challenge-page {% if forloop.first %}active{% endif %}"
+    data-page="{{ forloop.index0 | divided_by: 5 | plus: 1 }}">
+    {% endif %}
+
+    <p>[ {{ challenge.category }} ] <a href="{{ challenge.url | relative_url }}">{{ challenge.title |
+        escape }}</a></p>
+
+    {% assign next_mod = forloop.index | modulo: 5 %}
+    {% if next_mod == 0 or forloop.last %}
+  </div>
   {% endif %}
   {% endfor %}
-</ul>
-{% endfor %}
+</div>
+
+<div class="pagination-nav">
+  <button id="prevPage" disabled>&lt;</button>
+  <span id="pageInfo">1</span>
+  <button id="nextPage">&gt;</button>
+</div>
+
+<script src="{{ " /assets/challenges.js" | relative_url }}"></script>
