@@ -30,7 +30,12 @@
   line-height: 1;
 }
 
-.pagination-nav button:hover:not(:disabled) {
+.pagination-nav button:focus-visible {
+  outline: 1px dotted var(--base-color);
+  outline-offset: -4px;
+}
+
+.pagination-nav button:hover {
   background-color: var(--base-color);
   color: var(--background-color);
 }
