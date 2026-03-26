@@ -1,15 +1,9 @@
-# Example Site settings
-
-
-
 header_pages:
   - index.md
   - about.md
   - challenges.md
 
 footer: 'bon_vivant()'
-
-
 
 permalink: /:categories/:title/
 
